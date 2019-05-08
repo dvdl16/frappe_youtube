@@ -2,9 +2,6 @@
  "creation": "2019-05-08 18:27:25.150048",
  "doctype": "DocType",
  "engine": "InnoDB",
- "field_order": [
-  "clientid"
- ],
  "fields": [
   {
    "description": "Please copy and paste your OAuth 2.0 client ID from the Credentials page of your Project on https://console.cloud.google.com",
