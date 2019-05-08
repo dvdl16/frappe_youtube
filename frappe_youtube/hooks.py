@@ -122,6 +122,6 @@ app_license = "gpl-3.0"
 
 
 fixtures = [
-    {"dt":"Custom Script", "filters": [["dt", "in", ("Training Event")]]},
-    {"dt":"Custom Field", "filters": [["dt", "in", ("Training Event")]]}
+    {"dt":"Custom Script", "filters": [["dt", "in", ("Training Event", "Step")]]},
+    {"dt":"Custom Field", "filters": [["dt", "in", ("Training Event", "Step")]]}
     ]
