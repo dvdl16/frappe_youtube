@@ -42,14 +42,10 @@ frappe.ui.form.on('YouTube Video', {
 	}
 });
 
-
+// Hide upload fields if the doc hasn't been saved yet
  cur_frm.cscript.custom_refresh = function(doc) {
    var isSavedDoc = doc.__islocal ? 0 : 1;
-   cur_frm.toggle_display("video_url", isSavedDoc);
-   cur_frm.toggle_display("select_file", isSavedDoc);
-   cur_frm.toggle_display("selected_file_name", isSavedDoc);
-   cur_frm.toggle_display("upload_video", isSavedDoc);
-   cur_frm.toggle_display("view_video", isSavedDoc);
+   cur_frm.toggle_display("upload_video_section", isSavedDoc);
  }
 
 
