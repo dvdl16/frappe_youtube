@@ -65,7 +65,8 @@
   {
    "fieldname": "selected_file_name",
    "fieldtype": "Data",
-   "label": "Selected File"
+   "label": "File Name",
+   "read_only": 1
   },
   {
    "fieldname": "upload_video_section",
@@ -84,7 +85,7 @@
    "label": "Title"
   }
  ],
- "modified": "2019-05-08 18:14:08.549678",
+ "modified": "2019-05-08 18:26:26.693428",
  "modified_by": "Administrator",
  "module": "Frappe YouTube Upload",
  "name": "YouTube Video",

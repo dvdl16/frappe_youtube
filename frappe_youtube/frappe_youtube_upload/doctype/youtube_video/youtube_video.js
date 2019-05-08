@@ -15,6 +15,17 @@ frappe.ui.form.on('YouTube Video', {
 
      frm.set_df_property('view_video',  'visible',  frm.doc.__islocal ? 0 : 1);
  	},
+  onload: function() {
+    // Get Client ID from YouTube Upload Settings single doctype
+    frappe.model.get_value('YouTube Upload Settings', {'name': 'YouTube Upload Settings'}, 'clientid',
+      function(d) {
+        clientID = d.clientid;
+        if (clientID.length <= 0){
+          frappe.msgprint("Error: Please check settings in YouTube Upload Settings");
+          return;
+        }
+    });
+  },
   onload_post_render: function() {
     handleClientLoad();
   },
@@ -54,6 +65,7 @@ frappe.ui.form.on('YouTube Video', {
   // Global variables for GoogleAuth object, auth status.
 var GoogleAuth;
 var selectedFile;
+var clientID = "";
 
   /**
    * Load the API's client and auth2 modules.
@@ -67,9 +79,8 @@ var selectedFile;
     // Initialize the gapi.client object, which app uses to make API requests.
     // Get API key and client ID from API Console.
     // 'scope' field specifies space-delimited list of access scopes
-
     gapi.client.init({
-        'clientId': '817005221562-u7hi8jmps35ad7m5tf6v9s2enrddvoup.apps.googleusercontent.com',
+        'clientId': clientID,
         'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
         'scope': 'https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner'
     }).then(function () {
