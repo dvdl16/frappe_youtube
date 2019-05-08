@@ -33,7 +33,7 @@ frappe.ui.form.on('YouTube Video', {
   onload_post_render: function() {
     handleClientLoad();
   },
-  authorize: function() {
+  authorise: function() {
 	    handleAuthClick(null);
 	},
 	select_file: function() {
@@ -110,6 +110,11 @@ var clientID = "";
     // Toggle button text and displayed statement based on current auth status.
     if (isAuthorized) {
       //defineRequest();
+    }
+    else {
+      frappe.msgprint("You need to authorize the request to proceed");
+      cur_frm.toggle_display("authorise", true);
+      return;
     }
   }
 
@@ -511,6 +516,7 @@ var clientID = "";
           console.log('Upload complete for video ' + uploadResponse.id);
           cur_frm.set_value('video_url', uploadResponse.id);
           cur_frm.save();
+          frappe.msgprint("Upload Successful. YouTube may take a minute to process the new video")
         }.bind(this)
       });
 
