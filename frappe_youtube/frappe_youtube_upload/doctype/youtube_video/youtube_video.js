@@ -6,14 +6,18 @@ frappe.require("/assets/frappe_youtube/js/api.js");
 
 frappe.ui.form.on('YouTube Video', {
    refresh: function(frm) {
+     //Add HTML for embedded video
      var html_string_view = '<h5>View Video</h5><iframe width="560" height="315" src="https://www.youtube.com/embed/' + cur_frm.doc.video_url + '?cc_load_policy=1&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
      cur_frm.set_df_property('view_video', 'options', html_string_view);
      cur_frm.refresh_field('view_video');
+     //Add HTML for upload file input
      var html_string_placeholder = '<input id="input_file" type="file" name="name" style="display: none;" />';
      cur_frm.set_df_property('upload_file_placeholder', 'options', html_string_placeholder);
      cur_frm.refresh_field('upload_file_placeholder');
-
-     frm.set_df_property('view_video',  'visible',  frm.doc.__islocal ? 0 : 1);
+     //Add HTML for link to editing video subtitles on YouTube website
+     var html_string_sublink = '<h5><a target="_blank" href="https://studio.youtube.com/video/' + cur_frm.doc.video_url + '/translations?utm_campaign=upgrade&utm_medium=redirect&utm_source=%2Fmy_videos">Click here to edit the subtitles for this video</a></h5>';
+     cur_frm.set_df_property('link_to_subtitles', 'options', html_string_sublink);
+     cur_frm.refresh_field('link_to_subtitles');
  	},
   onload: function() {
     // Get Client ID from YouTube Upload Settings single doctype

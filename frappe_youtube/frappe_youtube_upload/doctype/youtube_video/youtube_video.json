@@ -14,7 +14,8 @@
   "upload_video",
   "current_video_section",
   "video_url",
-  "view_video"
+  "view_video",
+  "link_to_subtitles"
  ],
  "fields": [
   {
@@ -57,7 +58,6 @@
    "label": "Upload Video"
   },
   {
-   "depends_on": "eval:doc.video_url",
    "fieldname": "view_video",
    "fieldtype": "HTML",
    "label": "View Video"
@@ -74,6 +74,7 @@
    "label": "Upload New Video"
   },
   {
+   "depends_on": "eval:doc.video_url",
    "fieldname": "current_video_section",
    "fieldtype": "Section Break",
    "label": "Current Video"
@@ -83,9 +84,14 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Title"
+  },
+  {
+   "fieldname": "link_to_subtitles",
+   "fieldtype": "HTML",
+   "label": "Link to Subtitles"
   }
  ],
- "modified": "2019-05-08 18:26:26.693428",
+ "modified": "2019-05-08 19:21:29.462841",
  "modified_by": "Administrator",
  "module": "Frappe YouTube Upload",
  "name": "YouTube Video",
