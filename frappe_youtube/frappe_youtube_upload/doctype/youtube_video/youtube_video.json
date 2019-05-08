@@ -5,20 +5,23 @@
  "field_order": [
   "video_name",
   "description",
-  "video_url",
-  "start",
+  "upload_video_section",
   "authorise",
   "select_file",
   "upload_file_placeholder",
   "selected_file_name",
   "upload_video",
+  "current_video_section",
+  "video_url",
   "view_video"
  ],
  "fields": [
   {
    "fieldname": "video_name",
    "fieldtype": "Data",
-   "label": "Video Name"
+   "in_list_view": 1,
+   "label": "Video Name",
+   "reqd": 1
   },
   {
    "fieldname": "description",
@@ -28,16 +31,13 @@
   {
    "fieldname": "video_url",
    "fieldtype": "Data",
-   "label": "Video URL"
-  },
-  {
-   "fieldname": "start",
-   "fieldtype": "Button",
-   "label": "Start"
+   "label": "Video URL",
+   "read_only": 1
   },
   {
    "fieldname": "authorise",
    "fieldtype": "Button",
+   "hidden": 1,
    "label": "Authorise"
   },
   {
@@ -56,6 +56,7 @@
    "label": "Upload Video"
   },
   {
+   "depends_on": "eval:doc.video_url",
    "fieldname": "view_video",
    "fieldtype": "HTML",
    "label": "View Video"
@@ -64,9 +65,19 @@
    "fieldname": "selected_file_name",
    "fieldtype": "Data",
    "label": "Selected File"
+  },
+  {
+   "fieldname": "upload_video_section",
+   "fieldtype": "Section Break",
+   "label": "Upload New Video"
+  },
+  {
+   "fieldname": "current_video_section",
+   "fieldtype": "Section Break",
+   "label": "Current Video"
   }
  ],
- "modified": "2019-05-08 16:59:22.835664",
+ "modified": "2019-05-08 17:45:53.908353",
  "modified_by": "Administrator",
  "module": "Frappe YouTube Upload",
  "name": "YouTube Video",
