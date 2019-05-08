@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include frappe_youtube *.css
+recursive-include frappe_youtube *.csv
+recursive-include frappe_youtube *.html
+recursive-include frappe_youtube *.ico
+recursive-include frappe_youtube *.js
+recursive-include frappe_youtube *.json
+recursive-include frappe_youtube *.md
+recursive-include frappe_youtube *.png
+recursive-include frappe_youtube *.py
+recursive-include frappe_youtube *.svg
+recursive-include frappe_youtube *.txt
+recursive-exclude frappe_youtube *.pyc

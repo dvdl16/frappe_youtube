@@ -1,0 +1,91 @@
+{
+ "creation": "2019-05-08 16:58:19.581201",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "video_name",
+  "description",
+  "video_url",
+  "start",
+  "authorise",
+  "select_file",
+  "upload_file_placeholder",
+  "selected_file_name",
+  "upload_video",
+  "view_video"
+ ],
+ "fields": [
+  {
+   "fieldname": "video_name",
+   "fieldtype": "Data",
+   "label": "Video Name"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "video_url",
+   "fieldtype": "Data",
+   "label": "Video URL"
+  },
+  {
+   "fieldname": "start",
+   "fieldtype": "Button",
+   "label": "Start"
+  },
+  {
+   "fieldname": "authorise",
+   "fieldtype": "Button",
+   "label": "Authorise"
+  },
+  {
+   "fieldname": "select_file",
+   "fieldtype": "Button",
+   "label": "Select File"
+  },
+  {
+   "fieldname": "upload_file_placeholder",
+   "fieldtype": "HTML",
+   "label": "Upload File Placeholder"
+  },
+  {
+   "fieldname": "upload_video",
+   "fieldtype": "Button",
+   "label": "Upload Video"
+  },
+  {
+   "fieldname": "view_video",
+   "fieldtype": "HTML",
+   "label": "View Video"
+  },
+  {
+   "fieldname": "selected_file_name",
+   "fieldtype": "Data",
+   "label": "Selected File"
+  }
+ ],
+ "modified": "2019-05-08 16:59:22.835664",
+ "modified_by": "Administrator",
+ "module": "Frappe YouTube Upload",
+ "name": "YouTube Video",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "track_changes": 1
+}
