@@ -23,11 +23,22 @@ frappe.ui.form.on('YouTube Video', {
 	},
 	select_file: function() {
 	   document.getElementById('input_file').click();
-	   console.log(document.getElementById('input_file').files);
 	},
 	upload_video: function() {
-	    selectedFile = document.getElementById('input_file').files[0];
-	    defineRequest();
+    // Get file name and show on form
+    var fullPath = document.getElementById('input_file').value;
+    if (fullPath) {
+      var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+      var filename = fullPath.substring(startIndex);
+      if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+        filename = filename.substring(1);
+      }
+      cur_frm.set_value('selected_file_name', filename);
+    }
+
+    // Set file and start upload
+    selectedFile = document.getElementById('input_file').files[0];
+    defineRequest();
 	}
 });
 
