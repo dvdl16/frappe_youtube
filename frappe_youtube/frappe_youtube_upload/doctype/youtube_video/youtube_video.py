@@ -5,6 +5,9 @@
 from __future__ import unicode_literals
 # import frappe
 from frappe.model.document import Document
+import datetime
 
 class YouTubeVideo(Document):
-	pass
+	def validate(self):
+		# Set title on save
+		self.title = str(datetime.date.today().year) + "-" + str(datetime.date.today().month).zfill(2)  + " " + self.video_name

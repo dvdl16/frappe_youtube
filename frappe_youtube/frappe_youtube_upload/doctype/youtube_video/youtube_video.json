@@ -3,6 +3,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "title",
   "video_name",
   "description",
   "upload_video_section",
@@ -75,9 +76,15 @@
    "fieldname": "current_video_section",
    "fieldtype": "Section Break",
    "label": "Current Video"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title"
   }
  ],
- "modified": "2019-05-08 17:45:53.908353",
+ "modified": "2019-05-08 18:14:08.549678",
  "modified_by": "Administrator",
  "module": "Frappe YouTube Upload",
  "name": "YouTube Video",
@@ -98,5 +105,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "ASC",
+ "title_field": "title",
  "track_changes": 1
 }

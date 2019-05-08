@@ -451,12 +451,12 @@ var selectedFile;
   function defineRequest() {
         var metadata = createResource({'snippet.categoryId': '22',
                  'snippet.defaultLanguage': '',
-                 'snippet.description': 'Description of uploaded video.',
+                 'snippet.description': cur_frm.doc.description,
                  'snippet.tags[]': '',
-                 'snippet.title': 'Test video upload',
+                 'snippet.title': cur_frm.doc.title,
                  'status.embeddable': '',
                  'status.license': '',
-                 'status.privacyStatus': 'private',
+                 'status.privacyStatus': 'unlisted',
                  'status.publicStatsViewable': ''
       });
     var token = getAccessToken();
