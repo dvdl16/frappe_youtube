@@ -120,8 +120,8 @@ app_license = "gpl-3.0"
 # 	"frappe.desk.doctype.event.event.get_events": "frappe_youtube.event.get_events"
 # }
 
-
 fixtures = [
     {"dt":"Custom Script", "filters": [["dt", "in", ("Training Event", "Step")]]},
-    {"dt":"Custom Field", "filters": [["dt", "in", ("Training Event", "Step")]]}
+    {"dt":"Custom Field", "filters": [["dt", "in", ("Training Event", "Step")]]},
+    {"dt":"Role", "filters": [["name", "in", ("Video Uploader")]]}
     ]
