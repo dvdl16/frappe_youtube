@@ -2,17 +2,6 @@
  {
   "docstatus": 0,
   "doctype": "Custom Script",
-  "dt": "Training Event",
-  "modified": "2019-05-08 21:33:18.015168",
-  "name": "Training Event-Client",
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
-  "script": "frappe.ui.form.on('Training Event', {\n\trefresh: function(frm) {\n\t    if (frm.doc.youtube_video.length >= 0){\n            frappe.call({\n\t\t\t\tmethod: \"frappe_youtube.api.get_youtube_iframe\",\n\t\t\t\targs: {\n\t\t\t\t\tyoutube_video: frm.doc.youtube_video\n\t\t\t\t},\n\t\t\t\tcallback: function(r) {\n                    cur_frm.set_df_property('video_of_training', 'options', '<h5>Video of Training</h5>' + r.message);\n                    cur_frm.refresh_field('video_of_training');\n\t\t\t\t}\n\t\t\t});\n\t    }\n\t}\n});\n"
- },
- {
-  "docstatus": 0,
-  "doctype": "Custom Script",
   "dt": "Step",
   "modified": "2019-05-08 21:27:53.042655",
   "name": "Step-Client",
